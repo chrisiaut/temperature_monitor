@@ -1,6 +1,8 @@
 <?php
-$cpu = $_GET['cpu'];
-$room = $_GET['room'];
+$data = rawurldecode($_GET['data']);
+$json = json_decode($data,true);
+$cpu = $json['CPU'];
+$room = $json['room'];
 
 if($cpu && $cpu!=85)
 {

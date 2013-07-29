@@ -16,12 +16,12 @@ while(1)
   $wtemp = $data[1]/1000;
   $ctemp = implode(file($cputemp))/1000;
 
-  $tdata[] = array('CPU'=>$ctemp,'room'=>$wtemp);
+  $tdata = array('CPU'=>$ctemp,'room'=>$wtemp);
 
   echo "CPU: $ctemp\nRoommtemp: $wtemp\n";
   //var_dump($tdata);
 
-  $null = file($webserver_ip_and_port."get.php?cpu=$ctemp&room=$wtemp");
+  $null = file($webserver_ip_and_port."get.php?data=".rawurlencode(json_encode($tdata)));
 
   $lct = $ctemp;
   $lwt = $wtemp;

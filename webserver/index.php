@@ -95,7 +95,7 @@ $(function () {
 						{
 							$arr = explode(';',$line);
 							$arr[1] = trim($arr[1]);
-							echo '['.(($arr[1]+7200)*1000).','.$arr[0].'],'."\n";
+							echo '['.(($arr[1]+7200)*1000).','.$arr[0].'],'." ";
 							if($arr[1]>$since) $since = $arr[1];
 						}
 					
@@ -110,7 +110,7 @@ $(function () {
 						{
 							$arr = explode(';',$line);
 							$arr[1] = trim($arr[1]);
-							echo '['.(($arr[1]+7200)*1000).','.$arr[0].'],'."\n";
+							echo '['.(($arr[1]+7200)*1000).','.$arr[0].'],'." ";
 							if($arr[1]>$since) $since = $arr[1];
 						}
 					
@@ -120,7 +120,7 @@ $(function () {
         });
     });
 	
-	var since = <?php echo ($since+1); ?>;
+	var since = <?php echo (($since+1)*1000); ?>;
     
 	function jsondecode(string)
 	{
